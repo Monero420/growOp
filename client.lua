@@ -3,6 +3,7 @@ local plantedPlants = {}
 
 -- Command to plant a seed
 RegisterCommand('plant', function()
+    -- Obtain the player's X, Y, and Z coordinates.
     local x, y, z = table.unpack(GetEntityCoords(GetPlayerPed(-1)))
     -- Offset data so the plant doesn't spawn inside the player's feet or floating.
     local offsetX, offsetY, offsetZ = 0.0, 2.0, -1.0
