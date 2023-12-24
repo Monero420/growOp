@@ -46,8 +46,11 @@ AddEventHandler('harvestPlant', function(id)
 
                 local sharedPlantData = plantedPlants
                 TriggerClientEvent('updateTrackingTable', -1, sharedPlantData)
+				
+				local itemData = { key = "weed", amount = 180 }
+				TriggerClientEvent('updateInventory', source, itemData)
             else
-                print("This plant has already been harvested or is not ready yet!")
+                TriggerClientEvent('msgClient', source, "This plant has already been harvested or is not ready yet!")
             end
         end
     end
